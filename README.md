@@ -1,5 +1,5 @@
 ## 作成
 
 ```
-docker-compose run web rails new id --api –-database=postgresql
+docker-compose run web rails new . -d postgresql --api
 ```
