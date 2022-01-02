@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+<% 6.times do |n| %>
+bvlion_<%= n %>:
+  user: bvlion
+  title: <%= "test_#{n}" %>
+  description: <%= "testtest_#{n}" %>
+  <% if n % 2 == 0 then %>deleted_at: 2022-01-02 00:00:00<% end %>
+
+test_user_<%= n %>:
+  user: test_user
+  title: <%= "test_user_#{n}" %>
+  description: <%= "testtest_user_#{n}" %>
+  <% if n % 2 == 1 then %>deleted_at: 2022-01-02 00:00:00<% end %>
+<% end %>

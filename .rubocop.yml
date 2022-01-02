@@ -7,7 +7,4 @@ AllCops:
   NewCops: enable
 
 Style/Documentation:
-  Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'config/application.rb'
+  Enabled: false

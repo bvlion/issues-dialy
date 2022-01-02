@@ -12,6 +12,7 @@ development:
 
 test:
   <<: *default
+  database: issue_d_test
 
 production:
   <<: *default

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+bvlion:
+  github_id: bvlion
+  url: bvlion_family
+  pass: test
+  top_image_url: https://www.gravatar.com/avatar/acb890a6861c2f2bc5a8968e3ff20094
+
+test_user:
+  github_id: test_user
+  url: tests
+  pass: testtest
+  top_image_url: https://3.bp.blogspot.com/-UXqj-dHnFKQ/Vyqazj_WupI/AAAAAAAA6ZU/VtpIYdVbKH4AiEh02dz1DqSCwdt4k0iiACLcB/s400/school_test_enpitsu.png
