@@ -27,14 +27,16 @@ ActiveRecord::Schema.define(version: 2022_01_02_121846) do
   end
 
   create_table "users", id: :string, force: :cascade do |t|
-    t.string "github_id", null: false
+    t.string "email", null: false
+    t.string "token", null: false
     t.string "url", null: false
     t.string "pass", null: false
     t.string "top_image_url", null: false
+    t.boolean "ban", default: false, null: false
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["github_id"], name: "index_users_on_github_id", unique: true
+    t.index ["token"], name: "index_users_on_token", unique: true
   end
 
   add_foreign_key "articles", "users"

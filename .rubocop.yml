@@ -8,3 +8,8 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - "db/*"
