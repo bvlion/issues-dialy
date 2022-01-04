@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  has_many :article, dependent: :destroy
+  has_one :site, dependent: :destroy
 end

@@ -13,3 +13,9 @@ Metrics/MethodLength:
   Max: 20
   Exclude:
     - "db/*"
+
+Lint/MissingSuper:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false

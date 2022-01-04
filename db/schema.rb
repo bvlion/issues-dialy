@@ -10,34 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_02_121846) do
+ActiveRecord::Schema.define(version: 2022_01_03_121946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "articles", id: :string, force: :cascade do |t|
-    t.string "user_id", null: false
+    t.string "site_id", null: false
     t.string "title", null: false
     t.text "description", null: false
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["site_id"], name: "index_articles_on_site_id"
     t.index ["title"], name: "index_articles_on_title"
-    t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
+  create_table "sites", id: :string, force: :cascade do |t|
+    t.string "user_id", null: false
+    t.string "url", null: false
+    t.string "pass", null: false
+    t.string "top_image_url", null: false
+    t.datetime "deleted_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sites_on_user_id"
   end
 
   create_table "users", id: :string, force: :cascade do |t|
     t.string "email", null: false
     t.string "token", null: false
-    t.string "url", null: false
-    t.string "pass", null: false
-    t.string "top_image_url", null: false
     t.boolean "ban", default: false, null: false
-    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
-  add_foreign_key "articles", "users"
+  add_foreign_key "articles", "sites"
+  add_foreign_key "sites", "users"
 end
