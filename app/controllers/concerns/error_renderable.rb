@@ -4,9 +4,15 @@ module ErrorRenderable
   extend ActiveSupport::Concern
 
   included do
+    rescue_from ActiveRecord::RecordInvalid, with: :override_exception
+    rescue_from ActionController::ParameterMissing, with: :override_exception
     rescue_from ApiError do |e|
       render json: { message: e.message }, status: e.status
     end
+  end
+
+  def override_exception(error)
+    render json: { message: error.message }, status: :bad_request
   end
 
   class ApiError < StandardError
