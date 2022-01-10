@@ -11,5 +11,7 @@ class CreateSites < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    add_index :sites, :url, unique: true
   end
 end

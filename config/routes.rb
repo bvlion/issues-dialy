@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get '/auth/google_oauth2/callback', to: 'web/oauth2#create', format: 'json'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/auth/google_oauth2/callback', to: 'api/oauth2#create', format: 'json'
+  patch '/admin/site', to: 'api/site#site', format: 'json'
+  patch '/admin/article', to: 'api/site#article', format: 'json'
 end
