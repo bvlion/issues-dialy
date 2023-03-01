@@ -7,7 +7,7 @@ ruby '3.0.3'
 gem 'bootsnap', require: false
 gem 'omniauth-google-oauth2'
 gem 'pg', '~> 1.3'
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 6.1'
 gem 'rails', '~> 7.0.2'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
